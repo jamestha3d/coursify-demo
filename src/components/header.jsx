@@ -11,7 +11,7 @@ export default function Header() {
         <nav className="hidden md:flex space-x-4">
           <Link href="#features" className="text-gray-600 hover:text-gray-900">Features</Link>
           <Link href="#courses" className="text-gray-600 hover:text-gray-900">Courses</Link>
-          <Link href="#coming-soon" className="text-gray-600 hover:text-gray-900">Coming Soon</Link>
+          <Link href="#coming-soon" className="text-gray-600 hover:text-gray-900">Get Early Access</Link>
         </nav>
         <Button>Sign Up</Button>
       </div>

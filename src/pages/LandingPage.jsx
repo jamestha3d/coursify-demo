@@ -12,7 +12,7 @@ export default function LandingPage() {
       <main>
         <Hero />
         <Features />
-        <CourseShowcase />
+        {/* <CourseShowcase /> */}
         <ComingSoon />
       </main>
       <Footer />
