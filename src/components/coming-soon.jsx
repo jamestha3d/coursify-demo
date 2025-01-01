@@ -8,7 +8,7 @@ import { toast } from "@/hooks/use-toast"
 export default function ComingSoon() {
   const [email, setEmail] = useState('')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     try{
       const response = await fetch('https://simpliclass.onrender.com/api/v1/user/subscribe', {
