@@ -10,15 +10,38 @@ export default function ComingSoon() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Here you would typically send the email to your backend
+    try{
+      const response = await fetch('https://simpliclass.onrender.com/api/v1/user/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({email})
+      })
+      console.log('submitted')
+      if (!response.ok) {
+        // Toastify Error
+        console.log('some error')
+        const error = await response.json()
+
+        toast({
+          title: "Error!",
+          description: error.message,
+        })
+       
+        
+      }
     console.log('Email submitted:', email)
     toast({
       title: "Success!",
       description: "You've been added to our early access list.",
     })
     setEmail('')
+  }catch (error) {
+    // Toastify error
+    console.log('some error occured')
   }
-
+  }
   return (
     <section id="coming-soon" className="py-20 bg-gray-100">
       <div className="container mx-auto px-4 text-center">
