@@ -6,8 +6,8 @@ export default function Hero() {
       <div className="container mx-auto text-center px-4">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">Welcome to Coursify</h1>
         <p className="text-xl md:text-2xl mb-8">Learn, Teach, and Sell Courses with Ease</p>
-        <Button size="lg" variant="secondary">
-          Get Started
+        <Button size="lg" variant="secondary" asChild>
+          <a href="#coming-soon" className="scroll-smooth">Get Started</a>
         </Button>
       </div>
     </section>
