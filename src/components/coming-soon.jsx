@@ -24,9 +24,8 @@ export default function ComingSoon() {
         console.log('some error')
         const errorData = await response.json()
 
-        toast.success(errorData.message)
-       
-        
+        toast.error(errorData.message) 
+        return
       }
     console.log('Email submitted:', email)
     toast.success("You've been added to our early access list."
@@ -35,6 +34,7 @@ export default function ComingSoon() {
   }catch (error) {
     // Toastify error
     console.log('some error occured')
+    toast.error(error.message)
   }
   }
   return (
