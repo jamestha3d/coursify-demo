@@ -3,8 +3,8 @@
 import { useState } from 'react'
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { toast } from "@/hooks/use-toast"
-
+// import { toast } from "@/hooks/use-toast"
+import { toast } from 'react-toastify'
 export default function ComingSoon() {
   const [email, setEmail] = useState('')
 
@@ -22,20 +22,15 @@ export default function ComingSoon() {
       if (!response.ok) {
         // Toastify Error
         console.log('some error')
-        const error = await response.json()
+        const errorData = await response.json()
 
-        toast({
-          title: "Error!",
-          description: error.message,
-        })
+        toast.success(errorData.message)
        
         
       }
     console.log('Email submitted:', email)
-    toast({
-      title: "Success!",
-      description: "You've been added to our early access list.",
-    })
+    toast.success("You've been added to our early access list."
+    )
     setEmail('')
   }catch (error) {
     // Toastify error
